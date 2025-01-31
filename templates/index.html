@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <title> Projeto NBA </title>
+        <p style="color: blue; margin: 10px; text-align: center;"> Projeto de Análise de Dados da NBA, apresentação dos gráficos e tabelas. </p>
+    </header>
+    <div class="container">
+        <h1>Resultados do Projeto</h1>
+        <hr>
+        <h1> Parte 1 </h1>
+        <h2> Conferência Leste </h2>
+        {{ east_conference|safe }}
+        <h2> Conferência Oeste </h2>
+        {{ west_conference|safe }}
+        <h2> Jogos da Temporada 23/24 </h2>
+        {{ miami_heat_summary_23_24|safe }}
+        <h2> Jogo das Temporada 24/25 </h2>
+        {{ miami_heat_summary_24_25|safe }}
+        <h2> Dados </h2>
+        {{ miami_heat_summary_23_24_pt1|safe }}
+        {{ miami_heat_summary_24_25_pt1|safe }}
+        {{ miami_heat_summary_23_24_pt2|safe }}
+        {{ miami_heat_summary_24_25_pt2|safe }}
+        <h2> Dados Defensivos </h2>
+        <h4> 23/24 </h4>
+        {{ miami_heat_defensive_summary_23_24|safe }}
+        <h4> 24/25 </h4>
+        {{ miami_heat_defensive_summary_24_25|safe }}
+        <br>
+        <h1> Gráficos </h1>
+        <img src="{{ url_for('static', filename=bar_wins_losses_23_24) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_wins_losses_24_25) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=histogram_wins_losses) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=pie_home_away_win_losses_23_24) }}" class="img-fluid" >
+        <img src="{{ url_for('static', filename=pie_home_away_win_losses_24_25) }}" class="img-fluid" >
+        <img src="{{ url_for('static', filename=line_wins_losses) }}" class="img-fluid" >
+        <img src="{{ url_for('static', filename=scatter_points_23_24) }}" class="img-fluid" >
+        <img src="{{ url_for('static', filename=scatter_points_24_25) }}" class="img-fluid" >
+        <h1> Parte 2 </h1>
+        <hr>
+        <h1> Perfil dos Jogadores </h1>
+        {{ bam_adebayo_profile|safe }}
+        {{ tyler_herro_profile|safe }}
+        {{ jimmy_butler_profile|safe }}
+        <h1> Jogos de jogadores contra o time que você escolheu </h1>
+        <h5> Bam Adebayo </h5>
+        {{ bam_adebayo_games_against_x|safe }}
+        <h5> Tyler Herro </h5>
+        {{ tyler_herro_games_against_x|safe }}
+        <h5> Jimmy Butler </h5>
+        {{ jimmy_butler_games_against_x|safe }}
+        <br>
+        <h1> Jogos dos Jogadores do Miami Heat vs o Orlando Magic </h1>
+        <h5> Bam Adebayo </h5>
+        {{ bam_adebayo_vs_magic|safe }}
+        <h5> Tyler Herro </h5>
+        {{ tyler_herro_vs_magic|safe }}
+        <h5> Jimmy Butler </h5>
+        {{ jimmy_butler_vs_magic|safe }}
+        <br>
+        <h1> Status dos Jogadores </h1>
+        <h5> Bam Adebayo </h5>
+        {{ bam_adebayo_stats_23_24|safe }}
+        {{ bam_adebayo_stats_24_25|safe }}
+        <h5> Tyler Herro </h5>
+        {{ tyler_herro_stats_23_24|safe }}
+        {{ tyler_herro_stats_24_25|safe }}
+        <h5> Jimmy Butler </h5>
+        {{ jimmy_butler_stats_23_24|safe }}
+        {{ jimmy_butler_stats_24_25|safe }}
+        <br>
+        <h1> Estatísticas dos jogadores carreira vs temporada atual </h1>
+        <h5> Bam Adebayo </h5>
+        {{ bam_adebayo_stats_career|safe }}
+        <h5> Tyler Herro </h5>
+        {{ tyler_herro_stats_career|safe }}
+        <h5> Jimmy Butler </h5>
+        {{ jimmy_butler_stats_career|safe }}
+        <br>
+        <h1> Gráficos </h1>
+        <img src="{{ url_for('static', filename=distribution_bam_adebayo_pts) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=distribution_bam_adebayo_ast) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=distribution_bam_adebayo_reb) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=distribution_tyler_herro_pts) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=distribution_tyler_herro_ast) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=distribution_tyler_herro_reb) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=distribution_jimmy_butler_pts) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=distribution_jimmy_butler_ast) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=distribution_jimmy_butler_reb) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=box_plot) }}" class="img-fluid">
+        <br>
+        <h1> Parte 3 </h1>
+        <h1> Modelo de Gumbel Gráficos </h1>
+        <img src="{{ url_for('static', filename=line_bam_adebayo_points_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=line_bam_adebayo_assists_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=line_bam_adebayo_rebounds_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=line_tyler_herro_points_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=line_tyler_herro_assists_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=line_tyler_herro_rebounds_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=line_jimmy_butler_points_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=line_jimmy_butler_assists_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=line_jimmy_butler_rebounds_probabilities) }}" class="img-fluid">
+        <br>
+        <h1> Gráficos de Regressão Linear </h1>
+        <img src="{{ url_for('static', filename=bar_bam_adebayo_pts_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_bam_adebayo_ast_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_bam_adebayo_reb_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_tyler_herro_pts_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_tyler_herro_ast_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_tyler_herro_reb_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_jimmy_butler_pts_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_jimmy_butler_ast_probabilities) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=bar_jimmy_butler_reb_probabilities) }}" class="img-fluid">
+        <br>
+        <h1> Gráficos de Regressão Lógica </h1>
+        <img src="{{ url_for('static', filename=bam_adebayo_roc_curve) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=tyler_herro_roc_curve) }}" class="img-fluid">
+        <img src="{{ url_for('static', filename=jimmy_butler_roc_curve) }}" class="img-fluid">
+        <br>
+        <h1> Previsões de Jogos </h1>
+        <h6> Bam Adebayo </h6>
+        {{ bam_adebayo_predictions|safe }}
+        <img src="{{ url_for('static', filename=chart_bam_adebayo_predictions) }}" class="img-fluid">
+        <h6> Tyler Herro </h6>
+        {{ tyler_herro_predictions|safe }}
+        <img src="{{ url_for('static', filename=chart_tyler_herro_predictions) }}" class="img-fluid">
+        <h6> Jimmy Butler </h6>
+        {{ jimmy_butler_predictions|safe }}
+        <img src="{{ url_for('static', filename=chart_jimmy_butler_predictions) }}" class="img-fluid">
+    </div>
+</body>
+</html>
