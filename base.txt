@@ -1,2 +1,6 @@
-Time: Miami Heat
-Jogadores: Bam Adebayo, Tyler Herro, Jimmy Butler
+Equipe: Miami Heat
+
+Jogadores: 
+- Bam Adebayo
+- Tyler Herro 
+- Jimmy Butler
